@@ -88,7 +88,7 @@
 <body>
   <main class="login-card">
     <h1>Sign In</h1>
-    <form action="#" method="post">
+    <form id="login-form" action="#" method="post">
       <div class="field">
         <label for="email">Email</label>
         <input id="email" name="email" type="email" placeholder="you@example.com" required />
@@ -101,7 +101,19 @@
 
       <button type="submit">Login</button>
     </form>
+    <img id="login-image" src="myimage.png" alt="Login success" hidden />
     <p class="helper">Forgot password? Contact support.</p>
   </main>
+
+  <script>
+    const loginForm = document.getElementById("login-form");
+    const loginImage = document.getElementById("login-image");
+
+    loginForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      loginImage.hidden = false;
+    });
+  </script>
 </body>
 </html>
+
