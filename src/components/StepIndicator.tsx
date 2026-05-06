@@ -1,0 +1,1 @@
+export default function StepIndicator({step}:{step:number}){const steps=['Policy Info','Underwriting','Forms','Pricing'];return <div className='steps'>{steps.map((s,i)=><span className={i+1<=step?'active-step':''} key={s}>{i+1}. {s}</span>)}</div>}
