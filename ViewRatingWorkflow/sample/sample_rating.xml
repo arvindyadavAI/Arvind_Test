@@ -1,0 +1,9 @@
+<rating>
+  <public id="data.TotalResult" path="TotalResult" type="float" comment="Shared test" class="excludeInChangeSummary" override="1" ref="calc.FinalPremium"/>
+  <calculation id="calc.FinalPremium" formula="base.BasePremium * factor.Territory * surcharge.Claims"/>
+  <public id="base.BasePremium" path="BasePremium" type="float" value="1000"/>
+  <lookup id="factor.Territory" table="TerritoryTable" key="A" value="1.10"/>
+  <condition id="eligibility.ClaimsCheck" when="claimsCount &gt; 0" target="surcharge.Claims"/>
+  <public id="claimsCount" type="int" value="1"/>
+  <public id="surcharge.Claims" path="ClaimsSurcharge" type="float" value="1.15"/>
+</rating>
